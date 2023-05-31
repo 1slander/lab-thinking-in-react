@@ -1,9 +1,13 @@
 import { useState } from 'react';
 
-export const SearchBar = ({ search, setSearch }) => {
+export const SearchBar = ({ search, setSearch, setShowStock }) => {
   //Grab the searchbar value
   const filterHandler = (e) => {
     setSearch(e.target.value);
+  };
+
+  const checkHandler = (e) => {
+    setShowStock(e.target.checked);
   };
   return (
     <div>
@@ -14,7 +18,8 @@ export const SearchBar = ({ search, setSearch }) => {
         onChange={filterHandler}
         value={search}
       />
-      <input type="checkbox" />
+      <br />
+      <input type="checkbox" onChange={checkHandler} />
       <span>Only show products in stock</span>
     </div>
   );

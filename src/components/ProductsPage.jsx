@@ -11,13 +11,25 @@ function ProductsPage() {
 
   // Search bar Initial state
   const [search, setSearch] = useState('');
+  //Checkbox
+  const [showStock, setShowStock] = useState(false);
 
   return (
     <div>
       <h1>IronStore</h1>
 
-      <SearchBar search={search} setSearch={setSearch} />
-      <ProductTable products={products} search={search} setSearch={setSearch} />
+      <SearchBar
+        search={search}
+        setSearch={setSearch}
+        showStock={showStock}
+        setShowStock={setShowStock}
+      />
+      <ProductTable
+        products={products}
+        search={search}
+        setSearch={setSearch}
+        showStock={showStock}
+      />
     </div>
   );
 }
